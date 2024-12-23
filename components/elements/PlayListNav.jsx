@@ -5,7 +5,7 @@ import { IoMdPlayCircle } from "react-icons/io";
 const PlayListNav = ({ playlist }) => {
   const { id, owner, playlistName, songList } = playlist;
   const onClickPlay = () => {
-    console.log("명진", playlistName);
+    // play the playlist
   };
   return (
     <li className="mx-3 px-4 h-[56px] flex flex-row justify-between items-center hover:bg-neutral-700 rounded-lg group">
