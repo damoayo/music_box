@@ -1,6 +1,8 @@
 import React from "react";
 
-const layout = ({ children }) => {
+import { ReactNode } from "react";
+
+const layout = ({ children }: { children: ReactNode }) => {
   return <div>{children}</div>;
 };
 

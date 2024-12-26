@@ -1,6 +1,12 @@
 import React from "react";
 
-const page = (props) => {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+const page = (props: PageProps) => {
   return <div>channel/[{props.params.id}]</div>;
 };
 
