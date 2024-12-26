@@ -7,7 +7,7 @@ import Link from "next/link";
 import { CgNpm } from "react-icons/cg";
 import { cn } from "../../lib/utils";
 import { dummyPlaylistArray } from "@/lib/dummyData";
-import PlayListNav from "./PlaylistNav";
+import PlayListNav from "./PlayListNav";
 
 const Navigator = () => {
   const pathname = usePathname();
@@ -64,7 +64,9 @@ const Navigator = () => {
       <section>
         <ul className="flex flex-col ">
           {dummyPlaylistArray.map((playlist) => {
-            return <PlayListNav key={playlist.id} playlist={playlist}></PlayListNav>;
+            return (
+              <PlayListNav key={playlist.id} playlist={playlist}></PlayListNav>
+            );
           })}
         </ul>
       </section>
