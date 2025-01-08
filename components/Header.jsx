@@ -9,6 +9,7 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import Logo from "./elements/Logo";
 import Navigator from "./elements/Navigator";
 import { cn } from "@/lib/utils";
+import useUIState from "@/hooks/useUIState";
 
 const HeaderDrawer = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +35,7 @@ const HeaderDrawer = ({ children }) => {
 };
 
 const Header = ({ children }) => {
+  const { headerImageSrc } = useUIState();
   const [isScrolled, setIsScrolled] = useState(false);
   const headRef = useRef();
 
@@ -58,8 +60,10 @@ const Header = ({ children }) => {
           <Image
             className="object-cover"
             fill
-            src="https://images.unsplash.com/photo-1680552396773-2a942321e750?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="빌딩들 속의 빨간 이층버스"
+            src={
+              headerImageSrc ||
+              "https://images.unsplash.com/photo-1680552396773-2a942321e750?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
           />
           <div className=" absolute h-[400px] top-0 bg-black opacity-40 w-full"></div>
           <div className=" absolute h-[400px] top-0 bg-gradient-to-t from-black w-full"></div>
